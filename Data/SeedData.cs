@@ -1,0 +1,3 @@
+using AcxiomCRM.Models; using Microsoft.AspNetCore.Identity;
+namespace AcxiomCRM.Data;
+public static class SeedData { public static async Task Initialize(IServiceProvider sp){ var rm=sp.GetRequiredService<RoleManager<IdentityRole>>(); var um=sp.GetRequiredService<UserManager<ApplicationUser>>(); foreach(var r in new[]{"Admin","Manager","SalesExecutive"}) if(!await rm.RoleExistsAsync(r)) await rm.CreateAsync(new IdentityRole(r)); var user=await um.FindByEmailAsync("admin@acxiomcrm.com"); if(user==null){user=new ApplicationUser{UserName="admin@acxiomcrm.com",Email="admin@acxiomcrm.com",FullName="System Admin",EmailConfirmed=true}; await um.CreateAsync(user,"Admin@123"); await um.AddToRoleAsync(user,"Admin");}}}

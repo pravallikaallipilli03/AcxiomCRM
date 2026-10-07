@@ -1,0 +1,2 @@
+@model System.Collections.Generic.IEnumerable<AcxiomCRM.Models.Opportunity>
+<AcxiomCRM.Models.Opportunity><div class="container"><h2>Opportunities</h2><a class="btn btn-primary mb-3" href="/Opportunities/Create">Create Opportunity</a><table class="table table-bordered"><tr><th>Name</th><th>Stage</th><th>Amount</th><th>Probability</th><th>Close Date</th></tr>@foreach(var o in Model){<tr><td>@o.OpportunityName</td><td>@o.Stage</td><td>@o.Amount</td><td>@o.Probability%</td><td>@o.ExpectedCloseDate.ToShortDateString()</td></tr>}</table></div>

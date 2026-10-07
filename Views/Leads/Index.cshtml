@@ -1,0 +1,2 @@
+@model System.Collections.Generic.IEnumerable<AcxiomCRM.Models.Lead>
+<AcxiomCRM.Models.Lead><div class="container"><h2>Leads</h2><a class="btn btn-primary mb-3" href="/Leads/Create">Create Lead</a><form class="mb-3"><input name="search" class="form-control" placeholder="Search"/></form><table class="table table-bordered"><tr><th>Name</th><th>Email</th><th>Source</th><th>Status</th><th>Value</th></tr>@foreach(var l in Model){<tr><td>@l.LeadName</td><td>@l.Email</td><td>@l.Source</td><td>@l.Status</td><td>@l.ExpectedValue</td></tr>}</table></div>

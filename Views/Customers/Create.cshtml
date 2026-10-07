@@ -1,0 +1,3 @@
+@model AcxiomCRM.Models.Customer
+<div class="container"><h2>Create Customer</h2><form method="post">
+    @Html.AntiForgeryToken()<div asp-validation-summary="All" class="text-danger"></div><label asp-for="CustomerName"></label><input asp-for="CustomerName" class="form-control"/><span asp-validation-for="CustomerName" class="text-danger"></span><label asp-for="Email"></label><input asp-for="Email" class="form-control"/><span asp-validation-for="Email" class="text-danger"></span><label asp-for="Phone"></label><input asp-for="Phone" class="form-control"/><span asp-validation-for="Phone" class="text-danger"></span><label asp-for="CompanyName"></label><input asp-for="CompanyName" class="form-control"/><button class="btn btn-success mt-3">Save</button></form></div>
